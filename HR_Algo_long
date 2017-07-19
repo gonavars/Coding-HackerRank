@@ -1,0 +1,30 @@
+/**
+ * Created by Sravan on 7/19/17.
+ */
+
+
+import java.util.*;
+
+
+public class HR_Algo_Warm_4_long {
+    static long aVeryBigSum(int n, long[] ar) {
+        // Complete this function
+
+        long sum=0;
+        for(int  j =0;j<n;j++){
+            sum = sum+ ar[j];
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        long[] ar = new long[n];
+        for(int ar_i = 0; ar_i < n; ar_i++){
+            ar[ar_i] = in.nextLong();
+        }
+        long result = aVeryBigSum(n, ar);
+        System.out.println(result);
+    }
+}
