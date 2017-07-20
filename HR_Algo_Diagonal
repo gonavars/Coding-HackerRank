@@ -1,0 +1,44 @@
+/**
+ * Created by Sravan on 7/19/17.
+ */
+
+import java.io.*;
+import java.util.*;
+
+
+public class HR_Algo_Warm_5_diagonal {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int a[][] = new int[n][n];
+        for(int a_i=0; a_i < n; a_i++){
+            for(int a_j=0; a_j < n; a_j++){
+                a[a_i][a_j] = in.nextInt();
+            }
+        }
+
+        int sumA= 0;
+        for(int i=0;i<n;i++){
+            for(int j =0;j<n;j++){
+                if(i==j){
+                    sumA=sumA+a[i][j];
+                }
+
+            }
+        }
+        int i=0;
+        int j=n-1;
+        int sumB= 0;
+        while(j>=0){
+            sumB=sumB+a[i][j];
+            if(j==0){
+                break;
+            }
+            i++;
+            j--;
+        }
+
+        System.out.println(+Math.abs(sumA-sumB));
+
+    }
+}
